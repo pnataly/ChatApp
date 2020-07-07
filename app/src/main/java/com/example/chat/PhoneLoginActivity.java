@@ -88,7 +88,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
     private boolean isVerificationInProgress = false;
     private String mVerificationId,mPhoneNumber,myCCP;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
-    private TextView mDetailText,send,tvPhoneNumber;
+    private TextView send;
     private ImageView editPhoneNumber;
     private EditText mPhoneNumberField;
     //private EditText mVerificationField;
@@ -101,7 +101,6 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
     CountDownTimer countdownTimer;
 
     private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
-    private static final int STATE_INITIALIZED = 1;
     private static final int STATE_CODE_SENT = 2;
     private static final int STATE_VERIFY_FAILED = 3;
     private static final int STATE_VERIFY_SUCCESS = 4;
@@ -122,7 +121,6 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
         progressBarVerify=(ProgressBar)findViewById(R.id.progressbar2);
         layoutRegistration = (RelativeLayout) findViewById(R.id.reg_layout);
         layoutVerification =(RelativeLayout)findViewById(R.id.verify_layout);
-        //mDetailText = (TextView) findViewById(R.id.detail);
         //tvPhoneNumber =(TextView)findViewById(R.id.tv_phone_number);
         mPhoneNumberField = (EditText) findViewById(R.id.phone);
         //mVerificationField = (EditText) findViewById(R.id.field_verification_code);
@@ -442,7 +440,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
         });
     }
 
-    private void startCountdown() {
+ /*   private void startCountdown() {
         tvPhoneNumber.setText(mPhoneNumber);
         setResendButtonEnabled(false);
         countdownTimer = new CountDownTimer(60 * 1000, 1000) {
@@ -454,7 +452,7 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
                 setResendButtonEnabled(true);
             }
         }.start();
-    }
+    } */
 
     public void setResendButtonEnabled(boolean isEnabled) {
         if (isEnabled) {
@@ -502,10 +500,6 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
     private void updateUI(int uiState, FirebaseUser user, PhoneAuthCredential cred) {
         switch (uiState) {
 
-            case STATE_INITIALIZED:
-                mDetailText.setText("Please verify your phone first!");
-                break;
-
             case STATE_CODE_SENT:
                 //progressBar.setVisibility(View.INVISIBLE);
                 setStartProgressVisibility(false);
@@ -513,10 +507,8 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
                 setTitle(getString(R.string.verification));
                 layoutVerification.setVisibility(View.VISIBLE);
                 layoutRegistration.setVisibility(View.GONE);
-                startCountdown();
+               // startCountdown();
 
-                mDetailText.setText("Code Sent");
-                mDetailText.setTextColor(Color.parseColor("#43a047"));
                 break;
 
             case STATE_VERIFY_FAILED:
@@ -524,16 +516,11 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
                 if (countdownTimer != null) {
                     countdownTimer.cancel();
                 }
-
                 setVerifyProgressVisibility(false);
-                //mDetailText.setText("Verification failed");
-                //mDetailText.setTextColor(Color.parseColor("#dd2c00"));
                 progressBar.setVisibility(View.INVISIBLE);
                 break;
 
             case STATE_VERIFY_SUCCESS:
-                //mDetailText.setText("Verfication Sucessfull");
-                //mDetailText.setTextColor(Color.parseColor("#43a047"));
                 progressBar.setVisibility(View.INVISIBLE);
                 Intent mainIntent = new Intent(PhoneLoginActivity.this, MainActivity.class);
                 startActivity(mainIntent);
@@ -552,8 +539,6 @@ public class PhoneLoginActivity extends AppCompatActivity implements View.OnClic
 
             case STATE_SIGNIN_FAILED:
                 // No-op, handled by sign-in check
-                mDetailText.setText("Sign In Failed !");
-                mDetailText.setTextColor(Color.parseColor("#dd2c00"));
                 progressBar.setVisibility(View.INVISIBLE);
                 setVerifyProgressVisibility(false);
                 break;
