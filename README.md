@@ -14,6 +14,7 @@ The app show you a list of all your contacts that use this app.
 - send text, image or file message.
 - Delete Messages.
 - Last seen/Online.
+- Image Cropping.
 - Chat in group: create group, add member, delete group and rename.
 - Push notification on status bar when has new message.
 - using the Firebase Android SDK.
