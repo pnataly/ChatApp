@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.chat.PhoneLoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/reg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/verification_gif"
+            android:layout_width="380dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="55dp"
+            android:src="@drawable/login_gif" />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="370dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:padding="5dp"
+            android:layout_below="@id/verification_gif"
+            android:background="@drawable/rounded_edittext"
+            android:orientation="horizontal">
+
+            <!--  <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Phone number"
+                  android:textSize="18sp" /> -->
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:hideNameCode="true"
+                app:showFlag="true"
+                app:defaultNameCode="IL"/>
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="true"
+                android:hint="Enter your phone"
+                android:inputType="phone"
+                android:singleLine="true" />
+
+            <!--   <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/login_phone"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   app:startIconDrawable="@drawable/ic_phone"
+                   android:background="@drawable/rounded_edittext"
+                   android:layout_below="@id/verification_gif"
+                   android:layout_marginTop="70dp"
+                   android:layout_marginLeft="30dp"
+                   android:layout_marginRight="30dp"
+                   app:errorEnabled="true">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:inputType="number"
+                       android:hint="@string/phone" />
+
+               </com.google.android.material.textfield.TextInputLayout>  -->
+
+        </LinearLayout>
+
+        <rezwan.pstu.cse12.view.CircularMorphLayout
+            android:id="@+id/circular"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:id="@+id/send"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Send"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+        </rezwan.pstu.cse12.view.CircularMorphLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            style="@style/Widget.AppCompat.ProgressBar" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/verify_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verification code"
+            android:padding="10dp"
+            android:background="@color/colorAccent"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center" />
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/title"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_sms" />
+
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/pinview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image"
+            android:inputType="number"
+            app:pinLength="6"
+            app:pinWidth="46dp"
+            app:pinHeight="46dp"
+            android:itemBackground="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp" />
+
+        <TextView
+            android:id="@+id/not_receive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Didn't receive the code?"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:layout_below="@id/pinview"
+            android:textSize="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <rezwan.pstu.cse12.view.CircularMorphLayout
+            android:id="@+id/circular2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true" >
+
+            <TextView
+                android:id="@+id/verify"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="Verify"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+        </rezwan.pstu.cse12.view.CircularMorphLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            style="@style/Widget.AppCompat.ProgressBar" />
+
+
+    </RelativeLayout>
+
+ <!--   <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:startIconDrawable="@drawable/ic_phone"
+        android:background="@drawable/rounded_edittext"
+        android:layout_below="@id/verification_gif"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone" />
+
+    </com.google.android.material.textfield.TextInputLayout>  -->
+
+
+ <!--   <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/verification_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout"
+        android:layout_gravity="center_horizontal"
+        app:startIconDrawable="@drawable/ic_lock"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:visibility="invisible"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Verification Code"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/send_verification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_verification_code"
+        android:textAllCaps="false"
+        android:layout_marginTop="22dp"
+        android:padding="4dp"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/verification_code"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/verify"
+        android:textAllCaps="false"
+        android:layout_marginTop="30dp"
+        android:padding="4dp"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:layout_below="@id/send_verification"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent" />  -->
+    
+
+
+
+</FrameLayout>

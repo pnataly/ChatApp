@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryDark"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.chat.PhoneActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:startIconDrawable="@drawable/ic_phone"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="10dp"
+        android:layout_toEndOf="@id/login_code"
+        app:errorEnabled="true" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:inputType="textPhonetic"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/login_code"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:errorEnabled="true" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Code"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/send_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Code Verification"
+        android:textAllCaps="false"
+        android:layout_marginTop="50dp"
+        android:padding="4dp"
+        android:textSize="24sp"
+        android:layout_marginLeft="78dp"
+        android:drawableStart="@drawable/ic_phone"
+        android:layout_below="@id/login_code"
+        android:background="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent" />
+
+
+</RelativeLayout>

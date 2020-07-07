@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context="com.example.chat.GroupEditActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/group_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/appBarLayout"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="2dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/group_title"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/group_image"
+        android:background="@android:color/white"
+        app:boxStrokeColor="#FFF"
+        app:boxStrokeWidth="0dp"
+        app:boxBackgroundColor="#FFF"
+        app:errorEnabled="true" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/group_title"
+            android:background="@null"
+            android:padding="5dp"
+            android:inputType="text|textCapSentences"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/group_description"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/group_title"
+        android:background="@android:color/white"
+        android:layout_marginTop="30dp"
+        app:boxStrokeColor="#FFF"
+        app:boxStrokeWidth="0dp"
+        app:boxBackgroundColor="#FFF"
+        app:errorEnabled="true" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/group_description"
+            android:padding="5dp"
+            android:background="@null"
+            android:inputType="textMultiLine|textCapSentences"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/update_group_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_description"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_done_all_black_24dp" />
+
+</RelativeLayout>

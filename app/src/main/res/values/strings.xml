@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Chat</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="register_now">Register Now</string>
+    <string name="or_login_using_your">or Login using your</string>
+    <string name="phone">Phone</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_hav_an_account">Already have an Account ?</string>
+    <string name="find_friends">Find Friends</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="email">Email</string>
+    <string name="update">Update</string>
+    <string name="username">Username</string>
+    <string name="status">Status</string>
+    <string name="create_group">Create Group</string>
+    <string name="send_verification_code">Send Verification Code</string>
+    <string name="verify">Verify</string>
+    <string name="send_message">Send Message</string>
+    <string name="cancel_request">Cancel Request</string>
+    <string name="group_title">Group Title</string>
+    <string name="group_description">Group Description</string>
+    <string name="group_name">Group Name</string>
+    <string name="user_name">User Name</string>
+    <string name="last_message">Last Message</string>
+    <string name="edit_group">Edit Group</string>
+    <string name="add_participant">Add Participant</string>
+    <string name="leave_group">Leave Group</string>
+    <string name="participants_n">Participants(N)</string>
+    <string name="comment">Comment</string>
+    <string name="share">Share</string>
+    <string name="like">Like</string>
+    <string name="loading">Loading...</string>
+    <string name="msg_no_internet_connection">No internet connection!</string>
+    <string name="button_ok">OK</string>
+    <string name="msg_sms_verification_limit_exceeded">Error! - sms verification limit exceeded.</string>
+    <string name="msg_encountered_an_unexpected_error">Error! - unexpected error occurred</string>
+    <string name="verification">Verification</string>
+</resources>

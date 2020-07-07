@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_profile"
+        app:showAsAction="never|withText"
+        android:icon="@drawable/icon_profile"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/action_search"
+        android:title="search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"
+        android:visible="false"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_add_post"
+        android:title="Add Post"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="always"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/action_group_info"
+        android:title="info"
+        android:icon="@drawable/ic_info"
+        app:showAsAction="ifRoom"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/action_add_group"
+        android:title="@string/create_group"
+        android:icon="@drawable/ic_group_add"
+        app:showAsAction="ifRoom"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/action_notification"
+        android:title="Notification"
+        android:icon="@drawable/ic_notifications"
+        app:showAsAction="never" />
+
+
+    <item
+        android:title="Contacts"
+        android:id="@+id/action_contacts"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/logout"
+        android:icon="@drawable/ic_logout_icon"
+        app:showAsAction="never|withText" />
+
+    <item
+        android:id="@+id/action_add_user"
+        android:title="@string/logout"
+        android:icon="@drawable/ic_add_user"
+        app:showAsAction="ifRoom"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/action_edit"
+        android:title="Edit Profile"
+        android:icon="@drawable/ic_edit"
+        app:showAsAction="always"
+        android:visible="false" />
+
+</menu>

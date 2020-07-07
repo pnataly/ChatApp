@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/icon_profile"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:id="@+id/receiver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/image"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/receiver_message_layout"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/receiver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:padding="5dp"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/receiver_message_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="2dp"
+                android:text="receiver messages"
+                android:textColor="@android:color/black"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:layout_toEndOf="@+id/image" />
+
+            <ImageView
+                android:id="@+id/image_receiver"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_toEndOf="@+id/image"
+                android:layout_marginLeft="3dp"
+                android:layout_margin="10dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/receiver_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time: "
+                android:textSize="10sp"
+                android:layout_margin="3dp"
+                android:padding="5dp"
+
+                android:textColor="@color/colorAccent"
+                android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sender"
+        android:layout_marginEnd="3dp"
+        android:layout_alignParentTop="@+id/receiver"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/sender_message_layout" >
+
+        <TextView
+            android:id="@+id/sender_message_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="@+id/receiver_message_text"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:text="sender message"/>
+
+        <ImageView
+            android:id="@+id/image_sender"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/sender_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: "
+            android:padding="5dp"
+            android:layout_margin="3dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="10sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
